@@ -1,0 +1,103 @@
+*{
+  margin:0%;
+  padding:0%;
+  box-sizing: border-box;
+}
+
+html,body,#root{
+  height: 100%;
+  width: 100%;
+}
+
+main{
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+main .left,main .right{
+  /* overflow:auto; */
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  /* overflow: scroll; */
+}
+
+main .left{
+  /* overflow:auto; */
+  overflow-y: auto;
+  background-color: #000000;
+  
+}
+
+main .left .review{
+  z-index: 1000;
+  position:absolute;
+  bottom: 2rem;
+  right: 54%;
+  background-color: #eeebeb;
+  color: #000000;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.left .code,
+.code pre,
+.code pre code{
+  /* overflow:auto; */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: #0c0c0c;
+}
+main .right{
+  overflow-y: auto;
+  background-color: #343434;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+
+}
+/* removing focus border  */
+.code *:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #61dafb;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
