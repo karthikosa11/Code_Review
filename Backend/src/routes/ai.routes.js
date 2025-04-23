@@ -3,7 +3,7 @@ import getreview from "../controller/ai.controllers.js"
 
 const router=express.Router();
 
-router.post("/get-review",getreview)
+router.post("/",getreview)
 
 
 
