@@ -10,5 +10,5 @@ app.get("/",(req,res)=>{
     res.send("server started");
 })
 
-app.use("/ai",aiRoutes)
+app.use("/",aiRoutes)
 export default app;
