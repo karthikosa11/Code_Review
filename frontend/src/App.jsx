@@ -10,9 +10,7 @@ import './App.css'
 import Editor from 'react-simple-code-editor';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [code,setCode]=useState(`function sum(){
-            return 1+1}`);
+  const [code,setCode]=useState(``);
   const [review,setReview]=useState(``);
   const [loading,setLoading]=useState(false);
   useEffect(()=>{
@@ -35,11 +33,13 @@ function App() {
     <div className="left"> 
       <div className="code">
         <Editor
+        placeholder='Type your code here for review'
         value={code}
         onValueChange={code=>setCode(code)}
         highlight={code=>prism.highlight(code,prism.languages.javascript,"javascript")}
         padding={10}
         style={{
+          color:'white',
           fontFamily: 'Fira Code, Fira Mono, monospace',
           fontSize:16,
           // border:"1px solid #ddd",
@@ -55,6 +55,7 @@ function App() {
       }>{loading?"⏳ Reviewing...":"Review"}</div>
     </div>
     <div className="right">
+
       {loading?(
         <div className='spinner-container'>
           <div className='spinner'></div>
